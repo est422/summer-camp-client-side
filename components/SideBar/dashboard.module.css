@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+}
+.menu {
+  flex: 1;
+  padding: 20px;
+  /* background-color: grey; */
+}
+
+.content {
+  flex: 4;
+  padding: 20px;
+  /* color: gray; */
+}
+/* meta: "#60A5FA",
+   //    meta: "#20C5A8",
+      lightmeta: "#9EDCFF" */

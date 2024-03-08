@@ -1,0 +1,35 @@
+.container {
+  position: sticky;
+  top: 40px;
+  /* background-color: lightgray; */
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: lightgray;
+}
+.userimage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.userdetails {
+  display: flex;
+  flex-direction: column;
+}
+.username {
+  font-weight: 500;
+}
+
+.usertitle {
+  size: 12px;
+}
+.list {
+  list-style: none;
+}
+.cat {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 10px 0px;
+  background-color: lightgray;
+}

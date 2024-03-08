@@ -1,0 +1,148 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // provider = "cockroachdb"
+  provider = "mysql"
+  // provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model Role {
+//   id String      @id @default(cuid())
+//   roleName String
+//   role Role @default(USER)
+//   // usersRole UsersRole[]
+//   // user User?
+//   // user User @relation(fields: [userId], references: [id])
+//   // userId String @unique
+
+// }
+
+enum Role {
+  USER
+  ADMIN
+  EMPLOYEE
+  HR
+  FINANCE
+}
+
+model User {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  imageName String?
+  email     String   @unique
+  password  String
+  firstName      String
+  lastName    String
+  relationshiptocamper String?
+  role Role @default(USER)
+  camperInfo CamperInfo[]
+  addressInfo Address? 
+  receipt String?
+  status String? @default("Pending")
+  // role Role?
+  // usersRole UsersRole[]
+  // role Role @default(USER)
+  // role Role @relation(fields: [roleId], references: [id])  
+  // roleId String @unique
+  
+}
+
+model Address {
+  id String @id @default(cuid())
+  phone String
+  address String
+  city String
+  user User @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId String @unique
+
+}
+
+model CamperInfo {
+  id       String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  imageName String?
+  firstName      String
+  lastName    String
+  dateofbirth  DateTime
+  gender String
+  user User @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId String
+  camperMedicalInfo CamperMedicalInfo[]
+
+}
+
+model CamperMedicalInfo {
+  id        String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  alergies      String
+  medicalCondition    String
+  dietaryRestriction  String
+  shouldAvoid String
+  accommodationRequirments String
+  camperInfo CamperInfo @relation(fields: [camperId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  camperId String
+ 
+}
+
+model ApplicantsInfo {
+  id        String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  imageName String?
+  firstName String
+  lastName String
+  age String
+  phone String
+  address String
+  city String
+  gender String
+  major String
+  skillsandabilities String
+  references String
+  experiances String
+  appliedPosition String
+  cv String?
+  status String? @default("Pending")
+
+}
+
+model VolunteersInfo {
+  id        String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  imageName String?
+  firstName String
+  lastName String
+  age String
+  phone String
+  address String
+  city String
+  gender String
+  major String?
+  skillsandabilities String?
+  references String?
+  experiances String?
+  cv String?
+  status String? @default("Pending")
+
+}
+
+model Donations {
+  id        String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  firstName String
+  lastName String
+  phone String
+  address String
+  city String
+  donationType String?
+  receipt String?
+  amount String?
+  description String?
+  status String? @default("Pending")
+
+}
