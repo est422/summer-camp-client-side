@@ -153,9 +153,9 @@ const Enroll = () => {
     data.append("file", reciept[0]);
 
     try {
-      const res = await fetch( "/api/enroll", {
+      const res = await fetch("/api/enroll", {
         method: "POST",
-        // headers: { "Content-Type": "multipart/form-data" },
+        headers: { "Content-Type": "multipart/form-data" },
         body: data,
       });
       if (!res || res.ok !== true) {
