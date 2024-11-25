@@ -40,7 +40,7 @@ const VolunteerDetailsComponent = () => {
     setIsLoading(true);
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/volunteers/details/${params.id}`,
+         `/api/volunteers/details/${params.id}`,
         {
           method: "GET",
           // headers: { "Content-Type": "application/json" },
@@ -77,7 +77,7 @@ const VolunteerDetailsComponent = () => {
     data.append("status", "Approved");
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/volunteers/update/${params.id}`,
+         `/api/volunteers/update/${params.id}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "multipart/form-data" },
@@ -109,7 +109,7 @@ const VolunteerDetailsComponent = () => {
     data.append("status", "Rejected");
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/volunteers/update/${params.id}`,
+         `/api/volunteers/update/${params.id}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "multipart/form-data" },

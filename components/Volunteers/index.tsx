@@ -43,7 +43,7 @@ const VolunteersComponent = () => {
     setIsLoading(true);
     // if (status === "authenticated") {
     try {
-      const res = await fetch(process.env.APIpath + `api/volunteers/`, {
+      const res = await fetch( `api/volunteers/`, {
         method: "GET",
         // headers: { "Content-Type": "application/json" },
       });

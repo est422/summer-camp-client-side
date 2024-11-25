@@ -44,7 +44,7 @@ const UpdateApplicantComponent = () => {
     // if (status === "authenticated") {
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/application/details/${params.id}`,
+        `/api/application/details/${params.id}`,
         {
           method: "GET",
           // headers: { "Content-Type": "application/json" },
@@ -78,7 +78,7 @@ const UpdateApplicantComponent = () => {
 
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/application/update/${params.id}`,
+         `/api/application/update/${params.id}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "multipart/form-data" },

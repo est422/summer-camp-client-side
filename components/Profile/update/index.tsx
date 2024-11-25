@@ -106,7 +106,7 @@ const UpdateProfile = ({ profile }: any) => {
     data.append("receipt", receipt[0]);
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/users/profile/update/${userInfo.id}`,
+         `/api/users/profile/update/${userInfo.id}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "multipart/form-data" },

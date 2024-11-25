@@ -41,7 +41,7 @@ const DeleteApplicantComponent = () => {
     if (status === "authenticated") {
       try {
         const res = await fetch(
-          process.env.APIpath + `/api/users/${params.id}`,
+           `/api/users/${params.id}`,
           {
             method: "GET",
             // headers: { "Content-Type": "application/json" },

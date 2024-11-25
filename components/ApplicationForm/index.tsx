@@ -133,7 +133,7 @@ const ApplicationForm = () => {
 
     console.log("application form data", formData);
     try {
-      const res = await fetch(process.env.APIpath + "/api/application", {
+      const res = await fetch( "/api/application", {
         method: "POST",
         // headers: { "Content-Type": "multipart/form-data" },
         body: data,

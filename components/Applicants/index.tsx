@@ -39,7 +39,7 @@ const ApplicantsComponent = () => {
     setIsLoading(true);
     // if (status === "authenticated") {
     try {
-      const res = await fetch(process.env.APIpath + `/api/application/`, {
+      const res = await fetch( `/api/application/`, {
         method: "GET",
         // headers: { "Content-Type": "application/json" },
       });

@@ -35,7 +35,7 @@ const ForgatPasswordForm = () => {
     // } else {
     try {
       const res = await fetch(
-        process.env.APIpath + "/api/users/forgatpassword",
+         "/api/users/forgatpassword",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

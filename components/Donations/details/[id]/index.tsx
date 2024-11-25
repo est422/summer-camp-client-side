@@ -33,7 +33,7 @@ const DonationDetailsComponent = () => {
     setIsLoading(true);
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/donations/details/${params.id}`,
+         `/api/donations/details/${params.id}`,
         {
           method: "GET",
           // headers: { "Content-Type": "application/json" },

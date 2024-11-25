@@ -37,7 +37,7 @@ const DonationsComponent = () => {
     setIsLoading(true);
     // if (status === "authenticated") {
     try {
-      const res = await fetch(process.env.APIpath + `/api/donations/`, {
+      const res = await fetch( `/api/donations/`, {
         method: "GET",
         // headers: { "Content-Type": "application/json" },
       });

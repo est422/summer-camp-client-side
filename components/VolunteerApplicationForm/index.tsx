@@ -130,7 +130,7 @@ const VolunteersApplicationForm = () => {
 
     // console.log("application form data", formData);
     try {
-      const res = await fetch(process.env.APIpath + "/api/volunteers", {
+      const res = await fetch( "/api/volunteers", {
         method: "POST",
         // headers: { "Content-Type": "multipart/form-data" },
         body: data,

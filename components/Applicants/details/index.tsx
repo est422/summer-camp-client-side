@@ -40,7 +40,7 @@ const ApplicantDetailsComponent = () => {
     setIsLoading(true);
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/application/details/${params.id}`,
+         `/api/application/details/${params.id}`,
         {
           method: "GET",
           // headers: { "Content-Type": "application/json" },
@@ -77,7 +77,7 @@ const ApplicantDetailsComponent = () => {
     data.append("status", "Approved");
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/application/update/${params.id}`,
+         `/api/application/update/${params.id}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "multipart/form-data" },
@@ -109,7 +109,7 @@ const ApplicantDetailsComponent = () => {
     data.append("status", "Rejected");
     try {
       const res = await fetch(
-        process.env.APIpath + `/api/application/update/${params.id}`,
+         `/api/application/update/${params.id}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "multipart/form-data" },
