@@ -52,7 +52,8 @@ const Signup = () => {
     }
 
     try {
-      const signUpResponse = await fetch(process.env.APIpath + "/api/users", {
+      // const signUpResponse = await fetch(process.env.APIpath + "/api/users", {
+        const signUpResponse = await fetch("/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
