@@ -155,7 +155,7 @@ const Enroll = () => {
     try {
       const res = await fetch("/api/enroll", {
         method: "POST",
-        headers: { "Content-Type": "multipart/form-data" },
+        // headers: { "Content-Type": "multipart/form-data" },
         body: data,
       });
       if (!res || res.ok !== true) {
