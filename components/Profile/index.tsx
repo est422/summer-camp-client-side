@@ -84,7 +84,8 @@ const Profile = ({ profile }: any) => {
                 <Image
                   src={
                     userProfile.imageName === "undefined" ||
-                    userProfile.imageName === null
+                    userProfile.imageName === null ||
+                    userProfile.imageName === ""
                       ? "/Unknown_person.jpg"
                       : `/${userProfile.imageName}`
                   }
@@ -294,7 +295,8 @@ const Profile = ({ profile }: any) => {
                   <Image
                     src={
                       camper.imageName === "undefined" ||
-                      camper.imageName === null
+                      camper.imageName === null ||
+                      camper.imageName === ""
                         ? "/Unknown_person.jpg"
                         : `/${camper.imageName}`
                     }
