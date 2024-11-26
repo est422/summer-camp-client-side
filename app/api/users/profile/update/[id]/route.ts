@@ -13,17 +13,17 @@ export async function PUT(request: Request, { params }: any) {
     const data = await request.formData();
 
     //Upload Image
-    const formDataEntryValues = Array.from(data.values());
-    for (const formDataEntryValue of formDataEntryValues) {
-      if (
-        typeof formDataEntryValue === "object" &&
-        "arrayBuffer" in formDataEntryValue
-      ) {
-        const file = formDataEntryValue as unknown as Blob;
-        const buffer = Buffer.from(await file.arrayBuffer());
-        fs.writeFileSync(`public/${file.name}`, buffer);
-      }
-    }
+    // const formDataEntryValues = Array.from(data.values());
+    // for (const formDataEntryValue of formDataEntryValues) {
+    //   if (
+    //     typeof formDataEntryValue === "object" &&
+    //     "arrayBuffer" in formDataEntryValue
+    //   ) {
+    //     const file = formDataEntryValue as unknown as Blob;
+    //     const buffer = Buffer.from(await file.arrayBuffer());
+    //     fs.writeFileSync(`public/${file.name}`, buffer);
+    //   }
+    // }
 
     const userInfo = await prisma.user.update({
       where: {
