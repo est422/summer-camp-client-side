@@ -141,7 +141,7 @@ const Enroll = () => {
     data.append("dob", new Date(formData.dob).toString());
     data.append("address", formData.address);
     data.append("city", formData.city);
-    data.append("grade", formData.grade);
+    // data.append("grade", formData.grade);
     data.append("gender", formData.gender);
     data.append("alergies", formData.allergies);
     data.append("medicalCondition", formData.mdconditions);

@@ -15,20 +15,25 @@ export async function POST(request: NextRequest) {
 
   try {
     // const data = await request.json();
+    // const uploadDir = 'public/uploads';
+    // if (!fs.existsSync(uploadDir)) {
+    //   fs.mkdirSync(uploadDir, { recursive: true });
+    // }
+
     const data = await request.formData();
 
     //Upload Image
-    const formDataEntryValues = Array.from(data.values());
-    for (const formDataEntryValue of formDataEntryValues) {
-      if (
-        typeof formDataEntryValue === "object" &&
-        "arrayBuffer" in formDataEntryValue
-      ) {
-        const file = formDataEntryValue as unknown as Blob;
-        const buffer = Buffer.from(await file.arrayBuffer());
-        fs.writeFileSync(`public/${file.name}`, buffer);
-      }
-    }
+    // const formDataEntryValues = Array.from(data.values());
+    // for (const formDataEntryValue of formDataEntryValues) {
+    //   if (
+    //     typeof formDataEntryValue === "object" &&
+    //     "arrayBuffer" in formDataEntryValue
+    //   ) {
+    //     const file = formDataEntryValue as unknown as Blob;
+    //     const buffer = Buffer.from(await file.arrayBuffer());
+    //     fs.writeFileSync(`public/${file.name}`, buffer);
+    //   }
+    // }
     // const data = await request.json();
 
     // console.log(`form data: ${fName} ${dateofbirth}`);
